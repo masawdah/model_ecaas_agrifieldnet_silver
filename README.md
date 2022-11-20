@@ -149,7 +149,7 @@ this repo, this is only a placeholder to run the model locally for inferencing.
     * The `data/` folder must contain:
         * `input/chips` Sentinel-2 10m imagery chips  for inferencing:
             * `Images` Sentinel-2 10m imagery chips for inferencing:
-                * Folder name: `chip_id` e.g. `00c23`  Sentinel-2 bands 10m:
+                * Folder name `chip_id` e.g. `00c23`  Sentinel-2 bands 10m:
                            ** File name: `B01.tif` Type=Byte, ColorInterp=Coastal
                            ** File name: `B02.tif` Type=Byte, ColorInterp=Blue
                            ** File name: `B03.tif` Type=Byte, ColorInterp=Green
@@ -163,8 +163,8 @@ this repo, this is only a placeholder to run the model locally for inferencing.
                       ** File name: `B11.tif` Type=Byte, ColorInterp=SWIR16
                       ** File name: `B12.tif` Type=Byte, ColorInterp=SWIR22
                       
-                      ** File Format: {{ GeoTIFF, 256x256 }}
-                      ** Coordinate Reference System: {{ WGS84, EPSG:4326 }}
+                      ** File Format: GeoTIFF, 256x256
+                      ** Coordinate Reference System: WGS84, EPSG:4326
             * `fields` Corresponding field ids for each pixel in Sentinel-2 images
                 *Folder name: `chip_id` e.g. `00c23`  Corresponding field ids:
                      * File name: `field_ids.tif`
