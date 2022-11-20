@@ -164,13 +164,13 @@ this repo, this is only a placeholder to run the model locally for inferencing.
                      * File name: `B12.tif` Type=Byte, ColorInterp=SWIR22
                    
                      * File Format: GeoTIFF, 256x256
-                     * Coordinate Reference System: WGS84, EPSG:4326
+                     * Coordinate Reference System: WGS84 / UTM
             * `fields` Corresponding field ids for each pixel in Sentinel-2 images:
                 * Folder name: `chip_id` e.g. `00c23`  Corresponding field ids:
                      * File name: `field_ids.tif`
            
                      * File Format: GeoTIFF, 256x256
-                     * Coordinate Reference System: WGS84, EPSG:4326
+                     * Coordinate Reference System:  WGS84 / UTM
              
         * `/input/checkpoint` the model checkpoint {{ file | folder }}, `{{ checkpoint file or folder name }}`.
             Please note: the model checkpoint is included in this repository.
