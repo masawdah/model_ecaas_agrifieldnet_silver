@@ -147,15 +147,30 @@ this repo, this is only a placeholder to run the model locally for inferencing.
     contains some placeholder files to guide you.
 
     * The `data/` folder must contain:
-        * `input/chips` {{ Landsat, Maxar Open-Data 30cm, Sentinel-2, etc. }} imagery chips for inferencing:
-            * File name: {{ `chip_id.tif` }} e.g. {{ `0fec2d30-882a-4d1d-a7af-89dac0198327.tif` }}
-            * File Format: {{ GeoTIFF, 256x256 }}
-            * Coordinate Reference System: {{ WGS84, EPSG:4326 }}
-            * Bands: {{ 3 bands per file:
-                * Band 1 Type=Byte, ColorInterp=Red
-                * Band 2 Type=Byte, ColorInterp=Green
-                * Band 3 Type=Byte, ColorInterp=Blue
-                }}
+        * `input/chips` Sentinel-2 10m imagery chips  for inferencing:
+            * `Images` Sentinel-2 10m imagery chips for inferencing:
+                * Folder name: `chip_id` e.g. `00c23`  Sentinel-2 bands 10m:
+                      * File name: `B01.tif` Type=Byte, ColorInterp=Coastal
+                      * File name: `B02.tif` Type=Byte, ColorInterp=Blue
+                      * File name: `B03.tif` Type=Byte, ColorInterp=Green
+                      * File name: `B04.tif` Type=Byte, ColorInterp=Red
+                      * File name: `B05.tif` Type=Byte, ColorInterp=RedEdge
+                      * File name: `B06.tif` Type=Byte, ColorInterp=RedEdge
+                      * File name: `B07.tif` Type=Byte, ColorInterp=RedEdge
+                      * File name: `B08.tif` Type=Byte, ColorInterp=NIR
+                      * File name: `B8A.tif` Type=Byte, ColorInterp=NIR08
+                      * File name: `B09.tif` Type=Byte, ColorInterp=NIR09
+                      * File name: `B11.tif` Type=Byte, ColorInterp=SWIR16
+                      * File name: `B12.tif` Type=Byte, ColorInterp=SWIR22
+                      
+                      * File Format: {{ GeoTIFF, 256x256 }}
+                      * Coordinate Reference System: {{ WGS84, EPSG:4326 }}
+            * `fields` Corresponding field ids for each pixel in Sentinel-2 images
+                *Folder name: `chip_id` e.g. `00c23`  Corresponding field ids:
+                     * File name: `field_ids.tif`
+                     * File Format: {{ GeoTIFF, 256x256 }}
+                     * Coordinate Reference System: {{ WGS84, EPSG:4326 }}
+             
         * `/input/checkpoint` the model checkpoint {{ file | folder }}, `{{ checkpoint file or folder name }}`.
             Please note: the model checkpoint is included in this repository.
     * The `output/` folder is where the model will write inferencing results.
