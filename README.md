@@ -182,7 +182,7 @@ this repo, this is only a placeholder to run the model locally for inferencing.
 
     ```bash
     # change paths to your actual input and output folders
-    export INPUT_DATA="/home/my_user/{{repository_name}}/data/input/"
+    export INPUT_DATA="/home/my_user/ImbalancedCropDetectionML/data/input"
     export OUTPUT_DATA="/home/my_user/{{repository_name}}/data/output/"
     ```
 
