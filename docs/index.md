@@ -40,11 +40,6 @@ masawdah@gmail.com
 
 ## Applicable Spatial Extent
 
-{{
-
-Here please provide the applicable spatial extent, for new inferencing (this
-may be the same, or different than the spatial extent of the training data).
-Please provide the spatial extent bounding box as WKT text or GEOJSON text.
 
 ```geojson
 {
@@ -64,7 +59,7 @@ Please provide the spatial extent bounding box as WKT text or GEOJSON text.
               [76.24483194693136,28.326997605982278],
               [88.0460053723578,18.941440345823324],
               [88.0460053723578,28.326997605982278],
-              [76.24483194693136,18.941440345823324]
+              [76.24483194693136,18.941440345823324],
              
           ]
         ]
@@ -73,10 +68,6 @@ Please provide the spatial extent bounding box as WKT text or GEOJSON text.
   ]
 }
 ```
-
-<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-geojson-and-topojson-maps>
-
-}}
 
 ## Applicable Temporal Extent
 
