@@ -23,7 +23,7 @@ from utils import *
 # Selected bands
 selected_bands = ['B01', 'B02', 'B03', 'B04','B05', 'B06', 'B07', 'B08','B8A', 'B09', 'B11', 'B12']
 
-imgs_folders = glob.glob(f".{INPUT_DATA}/Images/*")   
+imgs_folders = glob.glob(f".{INPUT_DATA}/chips/Images/*")   
 test_folder_ids = [i.split("/")[-1] for i in imgs_folders]
 test_field_paths = [f'{INPUT_DATA}/chips/fields/{i}/field_ids.tif' for i in test_folder_ids]
 
