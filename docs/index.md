@@ -1,6 +1,6 @@
 # ImbalancedCropDetectionML
 
-{{ Model Description (paragraph) }}
+Second place solution to classify crop types in agricultural fields across Northern India using multispectral observations from Sentinel-2 satellite. Ensembled weighted tree-based models "LGBM, CATBOOST, XGBOOST" with stratified k-fold cross validation, taking advantage of spatial variabilty around each field within different distances.
 
 ![{{model_id}}](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
 
@@ -12,17 +12,10 @@ MLHub model id: `{{model_id}}`. Browse on [Radiant MLHub](https://mlhub.earth/mo
 - [AgriFieldNet Competition Dataset - Test Labels](https://api.radiant.earth/mlhub/v1/collections/ref_agrifieldnet_competition_v1_labels_train)
 
 
-
 ## Citation
-
-{{
-
-example:
 
 Alasawedah, M. (2022) “A Spatio-Temporal Deep Learning-Based Crop Classification
 Model for Satellite Imagery”, Version 1.0, Radiant MLHub.
-
-}}
 
 ## License
 
@@ -70,80 +63,28 @@ masawdah@gmail.com
 
 ## Applicable Temporal Extent
 
-{{
-
-The recommended start/end date of imagery for new inferencing. Example:
-
 | Start | End |
 |-------|-----|
-| 2000-01-01 | present |
+| 2022-01-01 | 2022-05-31 |
 
-}}
 
 ## Learning Approach
 
-{{
-
-The learning approach used to train the model. It is recommended that you use
-one of the values below, but other values are allowed.
-
 - Supervised
-- Unsupervised
-- Semi-supervised
-- Reinforcement-learning
-- Other (explain)
 
-}}
 
 ## Prediction Type
 
-{{
-
-The type of prediction that the model makes. It is recommended that you use one
-of the values below, but other values are allowed.
-
-- Object-detection
 - Classification
-- Segmentation
-- Regression
-- Other (explain)
 
-}}
-
-## Model Architecture
-
-{{
-
-Identifies the architecture employed by the model. This may include any string
-identifiers, but publishers are encouraged to use well-known identifiers
-whenever possible. More details than just “it’s a CNN”!
-
-}}
 
 ## Training Operating System
 
-{{
-
-Identifies the operating system on which the model was trained.
-
 - Linux
-- Windows (win32)
-- Windows (cygwin)
-- MacOS (darwin)
-- Other (explain)
-
-}}
 
 ## Training Processor Type
 
-{{
-
-The type of processor used during training. Must be one of "cpu" or "gpu".
-
 - cpu
-- gpu
-
-}}
 
 ## Model Inferencing
 
@@ -161,28 +102,15 @@ as descriptive as possible. The suggested sub-sections are as following:
 
 ### Training
 
-{{
+Prepare the data for tree models by computing the average values of the pixels within each field, then feature engineering by computing spatial variabilty, more vegetation, and flowering phenology indices.
 
-Explain training steps such as augmentations and preprocessing used on image
-before training.
-
-}}
+Zonal statistcs (mean , min, max, std) within different radiuses (0.50, 1.00, 1.50, 2.50, 3.50, 5.00) Km around each field
 
 ### Model
 
-{{
-
-Explain the model and why you chose the model in this section. A graphical representation
-of the model architecture could be helpful to individuals or organizations who would
-wish to replicate the workflow and reproduce the model results or to change the model
-architecture and improve the results.
-
-}}
+Wighted average tree-based models: lightgbm. catboost, xgboost classifers.
 
 ### Structure of Output Data
+-Predictions: Final predictions text file.  
+-Field_stats_indices: Extracted indices and statisitcs for each field. 
 
-{{
-
-Explain output file names and formats, interpretation, classes, etc.
-
-}}
