@@ -93,12 +93,6 @@ this model for new inferencing.
 
 ## Methodology
 
-{{
-
-Use this section to provide more information to the reader about the model. Be
-as descriptive as possible. The suggested sub-sections are as following:
-
-}}
 
 ### Training
 
@@ -111,6 +105,7 @@ Zonal statistcs (mean , min, max, std) within different radiuses (0.50, 1.00, 1.
 Wighted average tree-based models: lightgbm. catboost, xgboost classifers.
 
 ### Structure of Output Data
--Predictions: Final predictions text file.  
+-Predictions: Final predictions text file, with 13 crops classes as following: `Wheat, Mustard, Lentil, No Crop, Sugarcane, Garlic, Potato, Green pea, Bersem, Coriander, Gram, Maize, Rice` 
+
 -Field_stats_indices: Extracted indices and statisitcs for each field. 
 
