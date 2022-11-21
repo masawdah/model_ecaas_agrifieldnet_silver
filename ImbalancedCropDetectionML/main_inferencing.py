@@ -70,28 +70,22 @@ te_gdf = gpd.GeoDataFrame(te_gdf, geometry=gpd.points_from_xy(te_gdf.long, te_gd
 keep_same = {'field_id'}
 buffer_500m_stats = spatial_variability(te_gdf, 500, cols)
 buffer_500m_stats = add_suffix(buffer_500m_stats, '_500m', keep_same)
-buffer_500m_stats.to_csv(f"{OUTPUT_DATA}/buffer_500m_stats.csv", index=False)
 
 
 buffer_1000m_stats = spatial_variability(te_gdf, 1000, cols)
 buffer_1000m_stats = add_suffix(buffer_1000m_stats, '_1000m', keep_same)
-buffer_1000m_stats.to_csv(f"{OUTPUT_DATA}/buffer_1000m_stats.csv", index=False)
 
 buffer_1500m_stats = spatial_variability(te_gdf, 1500, cols)
 buffer_1500m_stats = add_suffix(buffer_1500m_stats, '_1500m', keep_same)
-buffer_1500m_stats.to_csv(f"{OUTPUT_DATA}/buffer_1500m_stats.csv", index=False)
 
 buffer_2500m_stats = spatial_variability(te_gdf, 2500, cols)
 buffer_2500m_stats = add_suffix(buffer_2500m_stats, '_2500m', keep_same)
-buffer_2500m_stats.to_csv(f"{OUTPUT_DATA}/buffer_2500m_stats.csv", index=False)
 
 buffer_3500m_stats = spatial_variability(te_gdf, 3500, cols)
 buffer_3500m_stats = add_suffix(buffer_3500m_stats, '_3500m', keep_same)
-buffer_3500m_stats.to_csv(f"{OUTPUT_DATA}/buffer_3500m_stats.csv", index=False)
 
 buffer_5000m_stats = spatial_variability(te_gdf, 5000, cols)
 buffer_5000m_stats = add_suffix(buffer_5000m_stats, '_5000m', keep_same)
-buffer_5000m_stats.to_csv(f"{OUTPUT_DATA}/buffer_5000m_stats.csv", index=False)
 
 # More field stats
 test_df = te_stats(test_df, test_data)
