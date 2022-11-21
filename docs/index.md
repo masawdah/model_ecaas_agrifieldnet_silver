@@ -1,4 +1,4 @@
-# {{ Model Name (one line) }}
+# ImbalancedCropDetectionML
 
 {{ Model Description (paragraph) }}
 
@@ -8,29 +8,10 @@ MLHub model id: `{{model_id}}`. Browse on [Radiant MLHub](https://mlhub.earth/mo
 
 ## Training Data
 
-{{
-
-Provide links to the training data for this model. There should be separate
-links for source and labels collections as the following example. Make sure to
-include `Source` and `Labels` in the corresponding names of each collection.
+- [AgriFieldNet Competition Dataset - Source Imagery](https://api.radiant.earth/mlhub/v1/collections/ref_agrifieldnet_competition_v1_source)
+- [AgriFieldNet Competition Dataset - Test Labels](https://api.radiant.earth/mlhub/v1/collections/ref_agrifieldnet_competition_v1_labels_train)
 
 
-Example using MLHub training data:
-
-- [Training Data Source](https://api.radiant.earth/mlhub/v1/collections/ref_african_crops_kenya_02_source)
-- [Training Data Labels](https://api.radiant.earth/mlhub/v1/collections/ref_african_crops_kenya_02_labels)
-
-}}
-
-## Related MLHub Dataset {{ (Optional) }}
-
-{{
-
-If this model was based on a dataset which is already published to MLHub, enter that link here.
-
-[https://mlhub.earth/data/ref_african_crops_kenya_02](https://mlhub.earth/data/ref_african_crops_kenya_02)
-
-}}
 
 ## Citation
 
@@ -38,38 +19,24 @@ If this model was based on a dataset which is already published to MLHub, enter 
 
 example:
 
-Amer, K. (2022) “A Spatio-Temporal Deep Learning-Based Crop Classification
-Model for Satellite Imagery”, Version 1.0, Radiant MLHub. [Date Accessed]
-Radiant MLHub. <https://doi.org/10.34911/rdnt.h28fju>
+Alasawedah, M. (2022) “A Spatio-Temporal Deep Learning-Based Crop Classification
+Model for Satellite Imagery”, Version 1.0, Radiant MLHub.
 
 }}
 
 ## License
 
-{{
-
-example: CC-BY-4.0
-
-(update the LICENSE file in this repository to match the license)
-
-}}
+CC-BY-4.0
 
 ## Creator{{s}}
 
-{{
+Mohammad Alasawedah - Earth Observation and Climate Data Science
+[https://www.linkedin.com/in/mohammad-alasawdah-b3b541a5/](https://www.linkedin.com/in/mohammad-alasawdah-b3b541a5/)
 
-example: Model creators and links go here (examples: Radiant Earth Foundation, Microsoft
-AI for Good Research Lab).
-
-}}
 
 ## Contact
 
-{{
-
-Contact email goes here (example: ml@radiant.earth)
-
-}}
+masawdah@gmail.com
 
 ## Applicable Spatial Extent
 
@@ -93,11 +60,11 @@ Please provide the spatial extent bounding box as WKT text or GEOJSON text.
         "type": "Polygon",
         "coordinates": [
           [
-              [-90,35],
-              [-90,30],
-              [-85,30],
-              [-85,35],
-              [-90,35]
+              [76.24483194693136,18.941440345823324], ,18.941440345823324,88.0460053723578,28.326997605982278
+              [76.24483194693136,28.326997605982278],
+              [88.0460053723578,18.941440345823324],
+              [88.0460053723578,28.326997605982278],
+             
           ]
         ]
       }
