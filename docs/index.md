@@ -40,7 +40,6 @@ masawdah@gmail.com
 
 ## Applicable Spatial Extent
 
-
 ```geojson
 {
   "type": "FeatureCollection",
