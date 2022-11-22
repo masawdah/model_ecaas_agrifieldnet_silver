@@ -12,7 +12,7 @@ if [[ -z "${OUTPUT_DATA}" ]]; then
     exit 1
 fi
 
-python {{repository_name}}/main_inferencing.py \
+python model_ecaas_agrifieldnet_silver/main_inferencing.py \
     --model_dir=${INPUT_DATA}/checkpoint \
     --chips_dir=${INPUT_DATA}/chips \
     --output_dir=${OUTPUT_DATA}
