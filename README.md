@@ -1,4 +1,4 @@
-# ImbalancedCropDetectionML
+# Weighted Tree-based Crop Classification Models for Imbalanced datasets
 
 Second place solution to classify crop types in agricultural fields across Northern India using multispectral observations from Sentinel-2 satellite. Ensembled weighted tree-based models "LGBM, CATBOOST, XGBOOST" with stratified k-fold cross validation, taking advantage of spatial variabilty around each field within different distances.
 
