@@ -1,8 +1,8 @@
 version: "3"
 services:
 
-  {{model_id}}_cpu:
-    image: {{repository_name}}:1
+  model_ecaas_agrifieldnet_silver_v1_cpu:
+    image: model_ecaas_agrifieldnet_silver:1
     volumes:
       - "${INPUT_DATA}:/var/data/input"
       - "${OUTPUT_DATA}:/var/data/output"
