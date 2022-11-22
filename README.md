@@ -2,9 +2,9 @@
 
 Second place solution to classify crop types in agricultural fields across Northern India using multispectral observations from Sentinel-2 satellite. Ensembled weighted tree-based models "LGBM, CATBOOST, XGBOOST" with stratified k-fold cross validation, taking advantage of spatial variabilty around each field within different distances.
 
-![{{model_id}}](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
+![model_ecaas_agrifieldnet_silver_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
 
-MLHub model id: `{{model_id}}`. Browse on [Radiant MLHub](https://mlhub.earth/model/{{model_id}}).
+MLHub model id: `model_ecaas_agrifieldnet_silver_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ecaas_agrifieldnet_silver_v1).
 
 ## ML Model Documentation
 
@@ -29,8 +29,8 @@ and other details in the [model documentation](/docs/index.md).
 First clone this Git repository.
 
 ```bash
-git clone https://github.com/masawdah/ImbalancedCropDetectionML.git
-cd ImbalancedCropDetectionML/
+git clone https://github.com/masawdah/model_ecaas_agrifieldnet_silver.git
+cd model_ecaas_agrifieldnet_silver/
 ```
 
 After cloning the model repository, you can use the Docker Compose runtime
@@ -113,8 +113,8 @@ docker build -t {{your_org_name}}/{{repository_name}}:1-gpu -f Dockerfile_gpu .
 
     ```bash
     # change paths to your actual input and output folders
-    export INPUT_DATA="/home/my_user/ImbalancedCropDetectionML/data/input"
-    export OUTPUT_DATA="/home/my_user/ImbalancedCropDetectionML/data/output"
+    export INPUT_DATA="/home/my_user/model_ecaas_agrifieldnet_silver/data/input"
+    export OUTPUT_DATA="/home/my_user/model_ecaas_agrifieldnet_silver/data/output"
     ```
 
 3. Run the appropriate Docker Compose command for your system
