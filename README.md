@@ -86,7 +86,7 @@ docker build -t masawdah/model_ecaas_agrifieldnet_silver:1 -f Dockerfile_cpu .
                      * File Format: GeoTIFF, 256x256
                      * Coordinate Reference System:  WGS84 / UTM
              
-        * `/input/checkpoint` the model checkpoint {{ file | folder }}, `{{ checkpoint file or folder name }}`.
+        * `/input/checkpoint` the model checkpoint `lgbms, xgbms, cats`.
             Please note: the model checkpoint is included in this repository.
     * The `output/` folder is where the model will write inferencing results.
 
