@@ -1,0 +1,277 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "ref_agrifieldnet_competition_v1_source_48a0f",
+    "properties": {
+        "datetime": null,
+        "start_datetime": "2022-01-01T00:00:00+00:00",
+        "end_datetime": "2022-05-31T00:00:00+00:00",
+        "eo:bands": [
+            {
+                "name": "B01",
+                "common_name": "coastal"
+            },
+            {
+                "name": "B02",
+                "common_name": "blue"
+            },
+            {
+                "name": "B03",
+                "common_name": "green"
+            },
+            {
+                "name": "B04",
+                "common_name": "red"
+            },
+            {
+                "name": "B05",
+                "common_name": "rededge"
+            },
+            {
+                "name": "B06",
+                "common_name": "rededge"
+            },
+            {
+                "name": "B07",
+                "common_name": "rededge"
+            },
+            {
+                "name": "B08",
+                "common_name": "nir"
+            },
+            {
+                "name": "B8A",
+                "common_name": "nir08"
+            },
+            {
+                "name": "B09",
+                "common_name": "nir09"
+            },
+            {
+                "name": "B11",
+                "common_name": "swir16"
+            },
+            {
+                "name": "B12",
+                "common_name": "swir22"
+            }
+        ]
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    76.8028718000555,
+                    25.126413768992368
+                ],
+                [
+                    76.80321126099926,
+                    25.14952143737574
+                ],
+                [
+                    76.77782364819907,
+                    25.14982843192894
+                ],
+                [
+                    76.777488960385,
+                    25.126720443034788
+                ],
+                [
+                    76.8028718000555,
+                    25.126413768992368
+                ]
+            ]
+        ]
+    },
+    "links": [
+        {
+            "rel": "self",
+            "href": "stac.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "root",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "../collection.json",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "B01": {
+            "href": "B01.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B01",
+                    "common_name": "coastal"
+                }
+            ]
+        },
+        "B02": {
+            "href": "B02.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B02",
+                    "common_name": "blue"
+                }
+            ]
+        },
+        "B03": {
+            "href": "B03.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B03",
+                    "common_name": "green"
+                }
+            ]
+        },
+        "B04": {
+            "href": "B04.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B04",
+                    "common_name": "red"
+                }
+            ]
+        },
+        "B05": {
+            "href": "B05.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B05",
+                    "common_name": "rededge"
+                }
+            ]
+        },
+        "B06": {
+            "href": "B06.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B06",
+                    "common_name": "rededge"
+                }
+            ]
+        },
+        "B07": {
+            "href": "B07.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B07",
+                    "common_name": "rededge"
+                }
+            ]
+        },
+        "B08": {
+            "href": "B08.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B08",
+                    "common_name": "nir"
+                }
+            ]
+        },
+        "B8A": {
+            "href": "B8A.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B8A",
+                    "common_name": "nir08"
+                }
+            ]
+        },
+        "B09": {
+            "href": "B09.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B09",
+                    "common_name": "nir09"
+                }
+            ]
+        },
+        "B11": {
+            "href": "B11.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B11",
+                    "common_name": "swir16"
+                }
+            ]
+        },
+        "B12": {
+            "href": "B12.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B12",
+                    "common_name": "swir22"
+                }
+            ]
+        }
+    },
+    "bbox": [
+        76.777488960385,
+        25.126413768992368,
+        76.80321126099926,
+        25.14982843192894
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+    ],
+    "collection": "ref_agrifieldnet_competition_v1_source"
+}

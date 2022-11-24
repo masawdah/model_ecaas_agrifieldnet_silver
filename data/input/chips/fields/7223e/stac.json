@@ -1,0 +1,202 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "ref_agrifieldnet_competition_v1_labels_train_7223e",
+    "properties": {
+        "datetime": null,
+        "start_datetime": "2022-01-01T00:00:00+00:00",
+        "end_datetime": "2022-05-31T00:00:00+00:00",
+        "label:properties": null,
+        "label:classes": [
+            {
+                "name": null,
+                "classes": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    8,
+                    15,
+                    5,
+                    16,
+                    14,
+                    13,
+                    9,
+                    36
+                ]
+            }
+        ],
+        "label:description": "Crop Type Labels",
+        "label:type": "raster",
+        "label:tasks": [
+            "classification",
+            "segmentation"
+        ],
+        "label:methods": [
+            "manual"
+        ]
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    76.47481322782431,
+                    25.29184044785831
+                ],
+                [
+                    76.47509301982626,
+                    25.314951402832644
+                ],
+                [
+                    76.44966688183553,
+                    25.315203684820215
+                ],
+                [
+                    76.4493919084486,
+                    25.292092467682142
+                ],
+                [
+                    76.47481322782431,
+                    25.29184044785831
+                ]
+            ]
+        ]
+    },
+    "links": [
+        {
+            "rel": "self",
+            "href": "stac.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "root",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "source",
+            "href": "../../ref_agrifieldnet_competition_v1_source/ref_agrifieldnet_competition_v1_source_7223e/stac.json",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "raster_labels": {
+            "href": "raster_labels.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "labels-raster"
+            ],
+            "file:values": [
+                {
+                    "values": [
+                        1
+                    ],
+                    "summary": "Wheat"
+                },
+                {
+                    "values": [
+                        2
+                    ],
+                    "summary": "Mustard"
+                },
+                {
+                    "values": [
+                        3
+                    ],
+                    "summary": "Lentil"
+                },
+                {
+                    "values": [
+                        4
+                    ],
+                    "summary": "No Crop"
+                },
+                {
+                    "values": [
+                        6
+                    ],
+                    "summary": "Sugarcane"
+                },
+                {
+                    "values": [
+                        8
+                    ],
+                    "summary": "Garlic"
+                },
+                {
+                    "values": [
+                        15
+                    ],
+                    "summary": "Potato"
+                },
+                {
+                    "values": [
+                        5
+                    ],
+                    "summary": "Green pea"
+                },
+                {
+                    "values": [
+                        16
+                    ],
+                    "summary": "Bersem"
+                },
+                {
+                    "values": [
+                        14
+                    ],
+                    "summary": "Coriander"
+                },
+                {
+                    "values": [
+                        13
+                    ],
+                    "summary": "Gram"
+                },
+                {
+                    "values": [
+                        9
+                    ],
+                    "summary": "Maize"
+                },
+                {
+                    "values": [
+                        36
+                    ],
+                    "summary": "Rice"
+                }
+            ]
+        },
+        "field_ids": {
+            "href": "field_ids.tif",
+            "type": "image/tiff; application=geotiff"
+        },
+        "documentation": {
+            "href": "../_common/documentation.pdf",
+            "type": "application/pdf"
+        }
+    },
+    "bbox": [
+        76.4493919084486,
+        25.29184044785831,
+        76.47509301982626,
+        25.315203684820215
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/label/v1.0.1/schema.json"
+    ],
+    "collection": "ref_agrifieldnet_competition_v1_labels_train"
+}

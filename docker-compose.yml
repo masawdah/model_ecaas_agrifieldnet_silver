@@ -2,12 +2,11 @@ version: "3"
 services:
 
   model_ecaas_agrifieldnet_silver_v1_cpu:
-    image: model_ecaas_agrifieldnet_silver:1
+    image:  masawdah/model_ecaas_agrifieldnet_silver:1
     volumes:
-      - "${INPUT_DATA}:/var/data/input"
-      - "${OUTPUT_DATA}:/var/data/output"
+      - "${INPUT_DATA}:/usr/src/app/data/input"
+      - "${OUTPUT_DATA}:/usr/src/app/data/output"
     environment:
-      - INPUT_DATA=/var/data/input
-      - OUTPUT_DATA=/var/data/output
-
-
+      - INPUT_DATA=/usr/src/app/data/input
+      - OUTPUT_DATA=/usr/src/app/data/output
+      

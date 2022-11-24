@@ -15,30 +15,50 @@ import geopandas as gpd
 import shapely
 import glob
 import joblib
+import argparse
 from sklearn.preprocessing import QuantileTransformer
 from utils import *
 
+# Machine learning
+from sklearn.metrics import log_loss
+from sklearn.preprocessing import QuantileTransformer
+from sklearn.model_selection import StratifiedKFold
+from lightgbm import LGBMClassifier
+from catboost import CatBoostClassifier
+import xgboost as xgb
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--INPUT_DATA", help="Path to input data", required=True)
+parser.add_argument("--OUTPUT_DATA", help="Path to output data", required=True)
+
+args = parser.parse_args()
+INPUT_DATA = args.INPUT_DATA 
+print(INPUT_DATA)
+OUTPUT_DATA = args.OUTPUT_DATA
 
 # Selected bands
 selected_bands = ['B01', 'B02', 'B03', 'B04','B05', 'B06', 'B07', 'B08','B8A', 'B09', 'B11', 'B12']
-
-imgs_folders = glob.glob(f".{INPUT_DATA}/chips/Images/*")   
+#print(f"{INPUT_DATA}/chips/Images/*")
+imgs_folders = glob.glob(f"{INPUT_DATA}/chips/Images/*")  
+#print(imgs_folders)
 test_folder_ids = [i.split("/")[-1] for i in imgs_folders]
 test_field_paths = [f'{INPUT_DATA}/chips/fields/{i}/field_ids.tif' for i in test_folder_ids]
 
+#print(test_folder_ids)
+#print(test_field_paths)
 
 test_data = pd.DataFrame(test_folder_ids , columns=['unique_folder_id'])
 test_data['field_paths'] = test_field_paths
 
-test_data = feature_extractor(test_data)
+extract_test_data = feature_extractor(test_data, INPUT_DATA)
 
 # Each field has several pixels in| the data. 
 # Compute the average values of the pixels within each field. 
 # Use `groupby` to take the mean for each field_id
 
-test_data_grouped  = test_data.groupby(['field_id']).mean().reset_index()
+test_data_grouped  = extract_test_data.groupby(['field_id']).mean().reset_index()
 test_data_grouped.field_id = [str(int(i)) for i in test_data_grouped.field_id.values]
+
 test_df = test_data_grouped.copy()
 
 # Features Engineering
@@ -52,10 +72,12 @@ test_df = pd.merge(test_df, test_veg_indices, on=['field_id'], how='inner')
 test_df = pd.merge(test_df, test_rededge_indices, on=['field_id'], how='inner')
 test_df = pd.merge(test_df, test_bloom_indices, on=['field_id'], how='inner')
 
+test_df.to_csv(f'{OUTPUT_DATA}/veg_indices.csv', index=False)
+test_df = pd.read_csv(f'{OUTPUT_DATA}/veg_indices.csv')
 
 # Spatial variability for spectral & indices data
 ## Extract fields centroid coordinates
-te_centroid_fields, te_lats, te_longs = fields_centroids(test_data)
+te_centroid_fields, te_lats, te_longs = fields_centroids(test_data, INPUT_DATA)
 te_gdf = pd.DataFrame({'field_id' : te_centroid_fields, 'lat' : te_lats,'long' : te_longs })
 
 ## columns
@@ -88,7 +110,7 @@ buffer_5000m_stats = spatial_variability(te_gdf, 5000, cols)
 buffer_5000m_stats = add_suffix(buffer_5000m_stats, '_5000m', keep_same)
 
 # More field stats
-test_df = te_stats(test_df, test_data)
+test_df = field_stats(test_df, extract_test_data)
 test_df.to_csv(f"{OUTPUT_DATA}/field_stats_indices.csv", index=False)
 
 # Merge everything togther
@@ -117,20 +139,21 @@ for i in range(10):
     catboostpreds.append(catboostpred)
 
 # Prediction using lgbm
-lgbmtpreds= []
+lgbmpreds= []
 for i in range(10):
     lgbm_model = joblib.load(f"{INPUT_DATA}/checkpoint/lgbms/lgbm{i+1}.sav")
     lgbmpred = lgbm_model.predict_proba(X_test)
-    lgbmtpreds.append(lgbmpred)
-lgbmpreds_mean = np.mean(lgbmpreds, axis=0)
+    lgbmpreds.append(lgbmpred)
 
 
 # Prediction using lgbm
 xgbmpreds= []
+dtest = xgb.DMatrix(X_test)
 for i in range(10):
     xgbm_model = joblib.load(f"{INPUT_DATA}/checkpoint/xgbms/xgbm{i+1}.sav")
-    xgbmpred = xgbm_model.predict_proba(X_test)
-    xgbmtpreds.append(xgbmpred)
+    #xgbmpred = xgbm_model.predict_proba(X_test)
+    xgbmpred = xgbm_model.predict(dtest, iteration_range=(0, xgbm_model.best_iteration + 1))
+    xgbmpreds.append(xgbmpred)
     
 # Ensemble predictions
 lgbmpreds_mean = np.mean(lgbmpreds, axis=0)
@@ -167,7 +190,7 @@ cols1 = ['field_id']
 cols1.extend(cols)
 predictions = predictions[cols1]
 
-predictions.to_csv('predictions.csv', index=False)
+predictions.to_csv(f'{OUTPUT_DATA}/predictions.csv', index=False)
 
 
                             

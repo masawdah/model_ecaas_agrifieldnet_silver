@@ -1,25 +1,19 @@
-FROM python:3
+FROM continuumio/miniconda3
 
-MAINTANER Mohammad Alasawedah
+MAINTAINER Mohammad Alasawedah
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN apt-get update && \
-     apt-get install -y --no-install-recommends \
-         gdal-bin \
-         libgdal-dev \
-    #     python3-opencv && \
-    mkdir -p \
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN mkdir -p \
         data/input/chips/images \
         data/input/chips/fields \
         data/input/checkpoint \
-        data/output && \
-    pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    apt-get clean -y && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
+        data/output
     
-ENTRYPOINT [ "bash", "run-model.sh" ]
+ENTRYPOINT [ "bash", "run_model.sh" ]
+
+

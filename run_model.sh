@@ -13,6 +13,5 @@ if [[ -z "${OUTPUT_DATA}" ]]; then
 fi
 
 python model_ecaas_agrifieldnet_silver/main_inferencing.py \
-    --model_dir=${INPUT_DATA}/checkpoint \
-    --chips_dir=${INPUT_DATA}/chips \
-    --output_dir=${OUTPUT_DATA}
+    --INPUT_DATA=${INPUT_DATA} \
+    --OUTPUT_DATA=${OUTPUT_DATA} \

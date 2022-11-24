@@ -18,10 +18,13 @@ import shapely
 # Selected bands
 selected_bands = ['B01', 'B02', 'B03', 'B04','B05', 'B06', 'B07', 'B08','B8A', 'B09', 'B11', 'B12']
 
+img_sh = 256
+n_selected_bands= len(selected_bands)
+n_obs = 1
 
 #Create an X variable. 
 #Each row is a pixel and each column is one of the band observations mapped to its corresponding field.
-def feature_extractor(data_):
+def feature_extractor(data_, INPUT_DATA):
     '''
         data_: Dataframe with 'field_paths' and 'unique_folder_id' columns
         path: Path to source collections files
@@ -43,7 +46,6 @@ def feature_extractor(data_):
         
         bands_src = [rasterio.open(f"{INPUT_DATA}/chips/Images/{tile_id}/{band}.tif") for band in selected_bands]
         bands_array = [np.expand_dims(band.read(1).flatten(), axis=1) for band in bands_src]
-        
         X_tile = np.hstack(bands_array)
 
         X_arrays.append(X_tile)
@@ -59,7 +61,7 @@ def feature_extractor(data_):
 
 
 # Extract fields centroids coordinates 
-def fields_centroids(data_):
+def fields_centroids(data_, INPUT_DATA):
     '''
         data_: Dataframe with 'field_paths' and 'unique_folder_id' columns
         path: Path to source collections files
