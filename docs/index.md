@@ -104,9 +104,9 @@ Zonal statistcs (mean , min, max, std) within different radiuses (0.50, 1.00, 1.
 Wighted average tree-based models: lightgbm. catboost, xgboost classifers.
 
 ### Structure of Output Data
--Predictions.csv: Final predictions text file, with 13 crops classes as following `Wheat, Mustard, Lentil, No Crop, Sugarcane, Garlic, Potato, Green pea, Bersem, Coriander, Gram, Maize, Rice` 
+- Predictions.csv: Final predictions text file, with 13 crops classes as following `Wheat, Mustard, Lentil, No Crop, Sugarcane, Garlic, Potato, Green pea, Bersem, Coriander, Gram, Maize, Rice` 
 
 - veg_indices.csv: Extracted vegitation indices for each field.
 
--Field_stats_indices.csv: Extracted statisitcs for each field. 
+- Field_stats_indices.csv: Extracted statisitcs for each field. 
 
