@@ -97,7 +97,7 @@ this model for new inferencing.
 
 Prepare the data for tree models by computing the average values of the pixels within each field, then feature engineering by computing spatial variabilty, more vegetation, and flowering phenology indices.
 
-Zonal statistcs (mean , min, max, std) within different radiuses (0.50, 1.00, 1.50, 2.50, 3.50, 5.00) Km around each field
+Zonal statistics  (mean , min, max, std) within different radiuses (0.50, 1.00, 1.50, 2.50, 3.50, 5.00) Km around each field
 
 ### Model
 
