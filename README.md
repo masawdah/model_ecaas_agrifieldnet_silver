@@ -38,27 +38,11 @@ files as described below.
 
 ## Pull or Build the Docker Image
 
-{{
-
-:pushpin: Model developer: please build and publish your images to [Docker
-Hub](https://hub.docker.com/). The images should be public, and should be
-tagged as `model_id:version` and `model_id:version-gpu`.
-
-For example model_id `model_unet_agri_western_cape_v1`
-would have two docker image tags published on Docker Hub:
-
-* `model_unet_agri_western_cape:1` for cpu inferencing
-* `model_unet_agri_western_cape:1-gpu` for gpu inferencing
-
-}}
-
 Pull pre-built image from Docker Hub (recommended):
 
 ```bash
 # cpu
-docker pull docker.io/{{your_org_name}}/{{repository_name}}:1
-# optional, for NVIDIA gpu
-docker pull docker.io/{{your_org_name}}/{{repository_name}}:1-gpu
+docker pull docker.io/masawdah/model_ecaas_agrifieldnet_silver:1
 
 ```
 
@@ -66,9 +50,8 @@ Or build image from source:
 
 ```bash
 # cpu
-docker build -t {{your_org_name}}/{{repository_name}}:1 -f Dockerfile_cpu .
-# optional, for NVIDIA gpu
-docker build -t {{your_org_name}}/{{repository_name}}:1-gpu -f Dockerfile_gpu .
+docker build -t masawdah/model_ecaas_agrifieldnet_silver:1 -f Dockerfile_cpu .
+
 
 ```
 
@@ -121,7 +104,11 @@ docker build -t {{your_org_name}}/{{repository_name}}:1-gpu -f Dockerfile_gpu .
 
     ```bash
     # cpu
-    docker compose up {{model_id}}_cpu
+    docker-compose up model_ecaas_agrifieldnet_silver_v1_cpu
+    
+    #  If the user is not added to docker group
+    
+    sudo -E docker-compose up model_ecaas_agrifieldnet_silver_v1_cpu
     ```
 
 4. Wait for the `docker compose` to finish running, then inspect the
