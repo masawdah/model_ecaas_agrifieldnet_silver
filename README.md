@@ -104,9 +104,9 @@ docker build -t masawdah/model_ecaas_agrifieldnet_silver:1 -f Dockerfile_cpu .
 
     ```bash
     # cpu
-    docker compose up model_ecaas_agrifieldnet_silver_v1_cpu
+    docker-compose up model_ecaas_agrifieldnet_silver_v1_cpu
     
-    or 
+    #  If the user is not added to docker group
     
     sudo -E docker-compose up model_ecaas_agrifieldnet_silver_v1_cpu
     ```
