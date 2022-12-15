@@ -148,7 +148,7 @@ for i in range(10):
 
 # Prediction using lgbm
 xgbmpreds= []
-dtest = xgb.DMatrix(X_test)
+dtest = xgb.DMatrix(X_test.values)
 for i in range(10):
     xgbm_model = joblib.load(f"{INPUT_DATA}/checkpoint/xgbms/xgbm{i+1}.sav")
     #xgbmpred = xgbm_model.predict_proba(X_test)
